@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
+// import { AngularFirestore } from 'angularfire2/firestore';
 //componets imports
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -58,7 +59,8 @@ export const fireBaseConfig = {
   providers: [
     AngularFireAuth,
     AngularFireDatabase,
-    ClientService
+    ClientService,
+    // AngularFirestore
   ],
   bootstrap: [AppComponent]
 })
