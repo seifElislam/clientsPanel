@@ -1,24 +1,11 @@
-<!-- <table class="table table-striped" *ngIf="clients?.lenght > 0;else noClients">
-  <thead class="thead-inverse">
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Balance</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let client of clients">
-      <td>{{client.id}}</td>
-      <td>{{client.firstName}} {{client.lastName}}</td>
-      <td>{{client.email}}</td>
-      <td>{{client.balance}}</td>
-      <td><a href="" class="btn btn-secondary btn-small">Details</a></td>
-    </tr>
-  </tbody>
-</table> -->
-
+<div class="row">
+  <div class="col-md-6">
+    <h2><i class="fa fa-users"></i> Clients</h2>
+  </div>
+  <div class="col-md-6">
+      <h5 class="pull-right text-muted">Total: {{total | currency:"USD"}}</h5>
+    </div>
+</div>
 <table class="table table-striped" *ngIf="clients?.length > 0;else noClients">
     <thead class="thead-inverse">
       <tr>
@@ -34,8 +21,8 @@
         <td>{{client.id}}</td>
         <td>{{client.firstName}} {{client.lastName}}</td>
         <td>{{client.email}}</td>
-        <td>{{client.balance}}</td>
-        <td><a href="" class="btn btn-secondary btn-small">Details</a></td>
+        <td>{{client.balance  | currency:"USD"}}</td>
+        <td><a href="" class="btn btn-secondary btn-small"> <i class="fa fa-arrow-circle-o-right"></i> Details</a></td>
       </tr>
     </tbody>
   </table>
