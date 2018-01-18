@@ -10,6 +10,7 @@ import { Client } from '../models/client';
 export class ClientService {
   clients: Client[];
   client: Client;
+  isLogedIn:boolean = false;
 
   constructor() {
     this.clients = [
@@ -57,6 +58,36 @@ export class ClientService {
        }
      }
    }
+
+   updateBalance(id, client){
+    for(let i=0;i<this.clients.length; i++){
+      if(this.clients[i].id == id){
+        this.clients[i] = client;
+         return this.clients[i]
+      }
+    }
+   }
+
+   deleteClient(id){
+    for(let i=0;i<this.clients.length; i++){
+      if(this.clients[i].id == id){
+         this.clients.splice(i, 1)
+      }
+    }
+   }
+   login(email:string, password:string){
+    if(email == "seif@gmail.com" && password == "test1234"){
+      this.isLogedIn = true
+      return true
+    }
+    else{
+      return false
+    }
+   }
+
+  logout(){
+    this.isLogedIn = false;
+  }
 
 }
  
