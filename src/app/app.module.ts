@@ -28,7 +28,8 @@ const appRoutes: Routes = [
   {path: '', component: DashboardComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'add-client', component:AddClinetComponent}
+  {path: 'add-client', component:AddClinetComponent},
+  {path: 'client/:id', component: ClientDetailsComponent}
 ]
 
 export const fireBaseConfig = {
@@ -65,7 +66,6 @@ export const fireBaseConfig = {
     AngularFireAuth,
     AngularFireDatabase,
     ClientService,
-    // AngularFirestore
   ],
   bootstrap: [AppComponent]
 })

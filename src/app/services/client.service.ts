@@ -45,8 +45,17 @@ export class ClientService {
      return this.clients;
    }
 
-   addClient(){
-     
+   addClient(client){
+    this.clients.unshift(client)
+   }
+
+   getClientDetalis(id){
+     for(let i=0;i<this.clients.length; i++){
+       if(this.clients[i].id == id){
+         console.log(this.clients[i]);
+          return this.clients[i]
+       }
+     }
    }
 
 }
